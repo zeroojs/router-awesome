@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "parentId": "root",
+    "title": "订单管理",
+    "name": "OrderManage"
+  },
+  {
+    "id": 2,
+    "parentId": "root",
+    "title": "产品管理",
+    "name": "ProductManage"
+  },
+  {
+    "id": 3,
+    "parentId": 1,
+    "title": "创建订单",
+    "name": "CreateOrder"
+  },
+  {
+    "id": 4,
+    "parentId": 1,
+    "title": "订单详情",
+    "hide": true,
+    "name": "OrderDetails"
+  },
+  {
+    "id": 5,
+    "parentId": 2,
+    "title": "创建产品",
+    "name": "CreateProduct"
+  },
+  {
+    "id": 6,
+    "parentId": 2,
+    "title": "产品详情",
+    "hide": true,
+    "name": "ProductDetails"
+  },
+  {
+    "id": 7,
+    "parentId": 2,
+    "title": "产品分类管理",
+    "name": "ProductCatManage"
+  },
+  {
+    "id": 8,
+    "parentId": 7,
+    "title": "创建分类",
+    "name": "CreateProductCat"
+  },
+  {
+    "id": 9,
+    "parentId": 7,
+    "title": "分类详情",
+    "hide": true,
+    "name": "ProductCatDetails"
+  },
+  {
+    "id": 10,
+    "parentId": "root",
+    "title": "关于我们",
+    "href": "http://zeroojs.com"
+  }
+]

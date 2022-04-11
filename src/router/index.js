@@ -1,25 +1,42 @@
+/*
+ * @Descripttion: your project
+ * @version: 0.0.0
+ * @Author: Minyoung
+ * @Date: 2022-04-08 09:29:14
+ * @LastEditors: Minyoung
+ * @LastEditTime: 2022-04-11 16:51:05
+ */
+import { useStore } from '@/store'
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    name: 'Home',
+    component: HomeView,
+    meta: {
+      title: '首页'
+    }
   }
+  // ...asyncRoutes
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+let isRegisted = false
+router.beforeEach(async (to, from, next) => {
+  const store = useStore()
+  if (isRegisted) { // 已注册
+    next()
+  } else {
+    await store.getMenus()
+    next({ ...to, replace: true })
+    isRegisted = true
+  }
 })
 
 export default router
